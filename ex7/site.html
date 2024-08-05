@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Código de Indicação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff ;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #723172; /* Roxo */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .container {
+            background-color: #ffc93b ;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .discount-options {
+            margin-top: 20px;
+        }
+
+        .code-list {
+            margin-top: 20px;
+        }
+
+        .code-list p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #333;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilizando o select */
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #fff;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="%23777" d="M10 12.6l-5.5-5.5-1.4 1.4L10 15.4l6.9-6.9-1.4-1.4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Gerador de Código de Indicação</h1>
+    </div>
+    <div class="container">
+        <form action="#" method="post">
+            <div class="login">
+                <p>Seja indicado por alguém: <a href="https://example.com">Clique aqui</a></p>
+            </div>
+            <div class="discount-options">
+                <label for="indicationCount">Quantas pessoas foram indicadas?</label>
+                <select name="indicationCount" id="indicationCount">
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                </select>
+            </div>
+            <div class="code-list">
+                <p>Código de Indicação:</p>
+                <p id="discountCode"></p>
+            </div>
+            <button type="button" onclick="generateDiscountCode()">Gerar Código</button>
+        </form>
+    </div>
+
+    <script>
+        function generateDiscountCode() {
+            const indicationCount = document.getElementById('indicationCount').value;
+            let discountPercentage = 0;
+            let discountCode = '';
+
+            if (indicationCount >= 1 && indicationCount <= 4) {
+                discountPercentage = 5;
+                discountCode = generateCode('APRO');
+            } else if (indicationCount >= 5 && indicationCount <= 9) {
+                discountPercentage = 15;
+                discountCode = generateCode('BPRO');
+            }
+
+            document.getElementById('discountCode').textContent = `${discountPercentage}% de desconto | Código: ${discountCode}`;
+        }
+
+        function generateCode(prefix) {
+            const codes = [
+                '11234567', '45201928', '23216754', '33280193', '99382181', '22345677', '11111111', '55443322', 
+                '33280192', '87654321', '88887777', '00998877', '45671234', '65432198', '11223344', '77776666', 
+                '98765432', '12341234', '45674567', '78901234', '20202020', '12121212', '55555555', '66666666', 
+                '99999999'
+            ];
+            const randomIndex = Math.floor(Math.random() * codes.length);
+            return prefix + codes[randomIndex];
+        }
+    </script>
+</body>
+</html>

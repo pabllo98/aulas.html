@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping tags</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(139, 172, 180);
+        margin: 0px;
+        
+    }
+    header {
+        background-color: rgb(189, 190, 230);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px 0px;
+        box-shadow: 2px 2px 3px  rgba(0, 0, 0, 0.445);
+
+    }
+
+    nav {
+        background-color: rgb(168, 145, 190);
+        padding: 10px;
+        box-shadow: 2px 2px 3px  rgba(0, 0, 0, 0.445);
+    }
+    nav > a {
+        padding: 20px;
+        text-decoration: none;
+    }
+    
+    nav > a:hover {
+        text-decoration: underline;
+    }
+    main {
+        background-color: rgb(189, 190, 230);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px 0px;
+        box-shadow: 2px 2px 3px  rgba(0, 0, 0, 0.445);
+    }
+        article {
+            background-color: rgb(168, 145, 190);
+        }
+        article > aside {
+            background-color: rgb(113, 239, 197);
+        }
+
+    footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+    }
+    footer > p {
+        margin: 0px;
+    }
+</style>
+<body>
+    <header>
+          <h1>Meu site</h1>
+          <nav>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+          </nav>
+    </header>
+    <main>
+       <section id="assuntos">
+        <p>esportes eletronicos</p>
+       </section>
+       <section id="noticias">
+           <article>
+            <h2>Noticias Sobre o Brasil</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe velit non nemo numquam magnam tempore ipsam blanditiis doloribus! Quia esse voluptas beatae! Ducimus, et natus dignissimos sapiente quidem neque suscipit.</p>
+            <aside>
+                <p>Artigo escrito por Pabllo Wyllams</p>
+            </aside>
+        </article>
+        <article>
+
+        </article>
+       </section>
+    </main>
+    <footer>
+        <p>Desenvolvido pelo Pabllo Wyllams</p>
+    </footer>
+    
+</body>
+</html>
