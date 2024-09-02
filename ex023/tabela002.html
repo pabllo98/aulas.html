@@ -16,6 +16,9 @@
             border: 1px solid black;
             padding: 10px;
         }
+        tbody > tr:nth-child(2n) {
+            background-color: lightblue;
+        }
         thead, tfoot {
             background-color: gray;
             color: white;
@@ -29,8 +32,8 @@
     <table>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col">População</th>
             </tr>
         </thead>
         <tbody>
@@ -54,11 +57,31 @@
                 <td>Paraná</td>
                 <td>11 824 665</td>
             </tr>
+            <tr>
+                <td>Rio Grande do Sul</td>
+                <td>11 229 915</td>
+            </tr>
+            <tr>
+                <td>Pernambuco</td>
+                <td>9 539 029</td>
+            </tr>
+            <tr>
+                <td>Ceará</td>
+                <td>9 233 656</td>
+            </tr>
+            <tr>
+                <td>Pará</td>
+                <td>8 664 306</td>
+            </tr>
+            <tr>
+                <td>Santa Catarina</td>
+                <td>8 058 447</td>
+            </tr>
             
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td>0000</td>
             </tr>
         </tfoot>
